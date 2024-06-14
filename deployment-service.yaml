@@ -15,7 +15,7 @@ spec:
       containers:
         - name: boardgame
           image: kabir96/boardgame:latest 
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
 
