@@ -28,8 +28,13 @@ metadata:
 spec:
   selector:
     app: boardgame
-  ports:
-    - protocol: TCP
-      port: 8080 
-      targetPort: 80 
-  type: LoadBalancer
+ports:
+    - port: 8080
+      # By default and for convenience, the `targetPort` is set to
+      # the same value as the `port` field.
+      targetPort: 8080
+      # Optional field
+      # By default and for convenience, the Kubernetes control plane
+      # will allocate a port from a range (default: 30000-32767)
+      nodePort: 30007
+  type: NodePort
